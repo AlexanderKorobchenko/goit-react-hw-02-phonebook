@@ -29,14 +29,12 @@ class App extends React.Component {
     });
   };
 
-  deleteContact = event => {
-    event.preventDefault();
-
+  deleteContact = currentId => {
     this.setState(prevState => {
       let indx = null;
 
       for (let i = 0; i < prevState.contacts.length; i += 1) {
-        if (prevState.contacts[i].id === event.target.id) {
+        if (prevState.contacts[i].id === currentId) {
           indx = i;
         }
       }
